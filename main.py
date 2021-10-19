@@ -3,9 +3,11 @@ import pyttsx3
 import voice
 
 #Voice definition and properties
-engine = pyttsx3.init('sapi5')
+engine = pyttsx3.init()
 voices= engine.getProperty('voices') #getting details of current voice
 engine.setProperty('voice', voices[0].id)
+
+
 
 #Voice assistant creation
 vera=voice.Assistant()
@@ -20,6 +22,7 @@ def takecommand():
     #It takes microphone input from the user and returns string output
     r = sr.Recognizer()
     with sr.Microphone() as source:
+        r.adjust_for_ambient_noise(source, duration=1)
         print("Listening...")
         r.pause_threshold = 1
         audio = r.listen(source)
