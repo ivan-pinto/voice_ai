@@ -41,12 +41,12 @@ def takecommand():
 #Wish me function
 def wish_me():
     hour = int(vera.tell_me_hour())
-    if hour >= 0 and hour < 12:
+    if hour >= 7 and hour < 12:
         speak("good morning, i am your virtual assistant")
     elif hour >= 12 and hour < 18:
         speak("good afternoon, i am your virtual assistant")
     else:
-        speak("hello, i am your virtual assistant")
+        speak("good night, i am your virtual assistant")
 
 
 if __name__ == "__main__":
