@@ -86,5 +86,5 @@ if __name__ == "__main__":
             talk=vera.tell_joke()
             speak(talk)
 
-#test
+
 
