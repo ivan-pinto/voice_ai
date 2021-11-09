@@ -1,10 +1,9 @@
 import serial
 
 
-
 def send(code):
     """
-    :return: True if success, False if fail
+    :return: Command if success, False if fail or Command 404
     """
     try:
         ser = serial.Serial("COM3", 9600)
@@ -15,16 +14,30 @@ def send(code):
         result = False
     return result
 
+def receive():
+    """
+    :return: True if success, False if fail
+    """
+    try:
+        ser = serial.Serial("COM3", 9600)
+        result = ser.readline()
+    except Exception as e:
+        print(e)
+        result = False
+    return result
+
 def choose(query):
 
-    code = "4"
+    code = "404"
 
+    if 'turn on board led' in query:
+        code = "33"
     if 'turn on light' in query:
-        code = "1"
-    if 'turn off light' in query:
-        code = "2"
-    if 'room temperature' in query:
-        code = "3"
+        code = "55"
+    if 'more light' in query:
+        code = "48"
+    if 'less light' in query:
+        code = "24"
     
     talk = send(code)
 
