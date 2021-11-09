@@ -2,6 +2,7 @@ import features.date         as f_date
 import features.wikipedia    as f_wkp
 import features.joke         as f_j
 import features.stm32_serial as f_stm
+import features.weather      as f_w
 import webbrowser            as wb
 
 
@@ -70,3 +71,22 @@ class Assistant:
             joke if success, False if fail
         """
         return f_j.joke()
+
+    ###WEATHER
+
+    def weather(self, query):
+        """
+        Just return weather for determinate city
+        :return: results if success, False if fail
+        """
+        return f_w.weather(query)
+
+    ###WISHME
+    def wish_me(self):
+        hour = int(f_date.hour())
+        if hour >= 7 and hour < 12:
+            return ("good morning, i am your virtual assistant")
+        elif hour >= 12 and hour < 18:
+            return ("good afternoon, i am your virtual assistant")
+        else:
+            return ("good night, i am your virtual assistant")

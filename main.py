@@ -38,19 +38,9 @@ def takecommand():
         return "None"
     return query
 
-#Wish me function
-def wish_me():
-    hour = int(vera.tell_me_hour())
-    if hour >= 0 and hour < 12:
-        speak("good morning, i am your virtual assistant")
-    elif hour >= 12 and hour < 18:
-        speak("good afternoon, i am your virtual assistant")
-    else:
-        speak("hello, i am your virtual assistant")
-
 
 if __name__ == "__main__":
-    wish_me()
+    speak(vera.wish_me())
     while True:
         query = takecommand().lower()
 
@@ -77,13 +67,19 @@ if __name__ == "__main__":
 
         #STM control related options
 
-        if 'sd' in query:
+        if 'stm' in query:
             talk = vera.stm_command(query)
             speak(talk)
         
         #Fun stuff
         if 'joke' in query:
             talk=vera.tell_joke()
+            speak(talk)
+
+        #Weather
+
+        if 'weather' in query:
+            talk = vera.weather(query)
             speak(talk)
 
 

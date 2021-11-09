@@ -31,7 +31,7 @@ def hour():
     :return: time if success, False if fail
     """
     try:
-        time = datetime.datetime.now().hour()
+        time = datetime.datetime.now().strftime("%H")
     except Exception as e:
         print(e)
         time = False
