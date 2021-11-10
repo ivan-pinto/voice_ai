@@ -16,7 +16,7 @@ def weather(query):
     """
     try:
         query = query.replace("weather", "")
-        complete_url = base_url + "appid=" + api_key + "&q=" + query
+        complete_url = base_url + "appid=" + api_key + "&q=" + query + "&units=metric"
         response = requests.get(complete_url)
         x = response.json()
         if x["cod"] != "404":
@@ -47,7 +47,7 @@ def weather(query):
             weather_description = z[0]["description"]
         
             # print following values
-            results = (" Temperature (in kelvin unit) = " +
+            results = (" Temperature (in celsius unit) = " +
                             str(current_temperature) +
                        " atmospheric pressure (in hPa unit) = " +
                                     str(current_pressure) +
@@ -55,6 +55,7 @@ def weather(query):
                                     str(current_humidity) +
                        " description = " +
                                     str(weather_description))
+            print(results)
         
         else:
            results= "City Not Found "
@@ -62,4 +63,3 @@ def weather(query):
         print(e)
         results = False
     return results
-

@@ -3,7 +3,9 @@ import features.wikipedia    as f_wkp
 import features.joke         as f_j
 import features.stm32_serial as f_stm
 import features.weather      as f_w
+import features.music        as f_m
 import webbrowser            as wb
+
 
 
 
@@ -53,6 +55,15 @@ class Assistant:
         """
         return f_date.hour()
     
+    ###WEATHER
+
+    def weather(self, query):
+        """
+        Just return weather for determinate city
+        :return: results if success, False if fail
+        """
+        return f_w.weather(query)
+
     ###STM
 
     def stm_command(self, query):
@@ -72,14 +83,13 @@ class Assistant:
         """
         return f_j.joke()
 
-    ###WEATHER
-
-    def weather(self, query):
+    ###MUSIC
+    def play_song_pc(self):
         """
-        Just return weather for determinate city
-        :return: results if success, False if fail
+        Just starts play a song
+        :return: results true success, False if fail
         """
-        return f_w.weather(query)
+        return f_m.play_song_pc()
 
     ###WISHME
     def wish_me(self):
@@ -90,3 +100,15 @@ class Assistant:
             return ("good afternoon, i am your virtual assistant")
         else:
             return ("good night, i am your virtual assistant")
+    
+    ###WAKE
+    def wake(self, query):
+        if 'hey daisy' in query:
+            return True
+        else:
+            return False
+    
+    ###Sleep
+    def sleep(self):
+        return False
+        
