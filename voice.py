@@ -4,6 +4,7 @@ import features.joke         as f_j
 import features.stm32_serial as f_stm
 import features.weather      as f_w
 import features.music        as f_m
+import features.calc         as f_c
 import webbrowser            as wb
 
 
@@ -90,6 +91,14 @@ class Assistant:
         :return: results true success, False if fail
         """
         return f_m.play_song_pc()
+    
+    ###CALC
+    def calc(self, query):
+        """
+        Make a calculation
+        :return: results if success, False if fail
+        """
+        return f_c.choose(query)
 
     ###WISHME
     def wish_me(self):

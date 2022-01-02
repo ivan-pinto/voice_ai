@@ -76,7 +76,7 @@ if __name__ == "__main__":
 
             #STM control related options
 
-            if 'stm' in query:
+            if 'daisy gateway' in query:
                 talk = daisy.stm_command(query)
                 speak(talk)
             
@@ -84,6 +84,12 @@ if __name__ == "__main__":
             if 'joke' in query:
                 talk=daisy.tell_joke()
                 speak(talk)
+
+            if 'i am beautiful' in query:
+                speak("prettier than you, just me")
+            
+            if 'first the chicken or the egg' in query:
+                speak("chicken, egg, chicken, egg, chicken, egg, chicken, egg. Oops. Stack overflow")
 
             #Weather
             if 'weather' in query:
@@ -94,8 +100,12 @@ if __name__ == "__main__":
             if 'play a song' in query:
                 daisy.play_song_pc()
 
-            #Sleep
+            #Calculator
+            if 'calculate' in query:
+                talk = daisy.calc(query)
+                speak(talk)
 
+            #Sleep
             if 'sleep daisy' in query or 'goodbye daisy' in query:
                 execute_daisy = daisy.sleep()
                 speak("Goodbye")
