@@ -1,3 +1,4 @@
+from tkinter import GROOVE
 import playsound
 import os
 import random
@@ -13,4 +14,12 @@ def play_song_pc():
         results = False
     return results
 
+def stop_song_pc():
+    try:
+        os.system('taskkill /f /im  Music.UI.exe')
+        results = True
+    except Exception as e:
+        print(e)
+        results = False
+    return results
 

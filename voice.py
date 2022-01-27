@@ -8,11 +8,6 @@ import features.calc         as f_c
 import webbrowser            as wb
 
 
-
-
-
-
-
 class Assistant:
 
     ###BROWSER
@@ -91,6 +86,13 @@ class Assistant:
         :return: results true success, False if fail
         """
         return f_m.play_song_pc()
+
+    def stop_song_pc(self):
+        """
+        Just stops play a song
+        :return: results true success, False if fail
+        """
+        return f_m.stop_song_pc()
     
     ###CALC
     def calc(self, query):
@@ -120,4 +122,11 @@ class Assistant:
     ###Sleep
     def sleep(self):
         return False
+
+    ####Apresetation
+    def apresentation(self, query):
+        if 'introduce yourself' in query:
+            return True
+        else:
+            return False
         
