@@ -33,6 +33,6 @@ Voice assistant.
 
 
 ## Results:
-![](https://img.shields.io/github/repo-size/ivan-pinto/gateway)
+![](https://img.shields.io/github/repo-size/ivan-pinto/led_gateway.jpg)
 
 
