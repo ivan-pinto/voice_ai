@@ -8,20 +8,20 @@ Voice assistant.
 
 ## Tecnologies:
 
-_Bordes
+**Bordes
 - STM32
 - Arduino Uno
 
-_Languages
+**Languages
 - Python
 - C++
 
-_IDE´s
+**IDE´s
 - CubeMX
 - Arduino IDE
 - VSCode
 
-_Protocols
+**Protocols
 -UART
 -SPI
 -LoRa
