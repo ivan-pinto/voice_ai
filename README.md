@@ -22,10 +22,10 @@ Voice assistant.
 - VSCode
 
 **Protocols**
--UART
--SPI
--LoRa
--PWM
+- UART
+- SPI
+- LoRa
+- PWM
 
 
 ## To test:
